@@ -1,0 +1,83 @@
+
+    <div class="body">
+        <div class="row-logo">
+            <div class="col" style="height: 150px;">
+                <p class="logo">BANK LOGO</p>
+            </div>
+        </div>
+        <div class="row-Desc">
+            <div class="text">
+                <span class="desc-text">Dear Customer,<br>
+                    Your in the process of registration of a E-Mandate. Please click <b>"proceed"</b> to initiate
+                    mandate
+                    registration process if the below mentioned fields are correct.
+                </span>
+            </div>
+        </div>
+        <div class="row-mandate">
+            <span class="mandate-text">
+                <h3>Mandate details:</h3>
+            </span>
+        </div>
+        <div class="row-form">
+            <form class="form-mandate">
+                <table>
+                    <tr>
+                        <th>Account number</th>
+                        <td>
+                            <input type="text" disabled class="form-inputs" placeholder="customer account number"
+                             [(ngModel)]="customer.accountNo" name = "accountNo">
+                         </td>
+                    </tr>
+                    <tr>
+                        <th>Mandate issued to</th>
+                        <td><input type="text" disabled class="form-inputs" placeholder="corporate name"></td>
+                    </tr>
+                    <tr>
+                        <th>Start Date</th>
+                        <td><input type="date" disabled class="form-inputs"></td>
+                    </tr>
+                    <tr>
+                        <th>End Date</th>
+                        <td><input type="date" disabled class="form-inputs"></td>
+                    </tr>
+                    <tr>
+                        <th>Frequency</th>
+                        <td><select class="form-inputs" disabled>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Quaterly">Quaterly</option>
+                                <option value="Half_Yearly">Half Yearly</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <th>Amount in figures</th>
+                        <td><input type="text" class="form-inputs-rupee" placeholder="rupee" disabled><input type="text"
+                                class="form-inputs-paise" placeholder="paise" disabled></td>
+                    </tr>
+                    <tr>
+                        <th>Amount in words</th>
+                        <td><input type="text" class="form-inputs" placeholder="To be populated by bank" disabled></td>
+                    </tr>
+                    <tr>
+                        <th>Purpose of mandate</th>
+                        <td><input type="text" class="form-inputs" placeholder="As per NPCI category" disabled></td>
+                    </tr>
+                </table>
+
+                <div class="buttons">
+                    <button class="proceed-button" type="submit">Proceed</button>
+                    <button class="Cancel-button">Cancel</button>
+                </div>
+                <div class="Images">
+                    <img src="../assets/NACH-Logo.png" class="Nach-image" alt="NACH">
+                    <p>E-Mandate<br>Powered by</p>
+                    <img src="../assets/NACH.jpg" class="npci-image" alt="npci">
+
+                </div>
+
+            </form>
+            <div>
+
+            </div>
+        </div>
+    </div>

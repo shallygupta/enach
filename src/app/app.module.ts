@@ -1,16 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, RoutingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MandateComponent } from './mandate/mandate.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthoriseMandComponent } from './authorise-mand/authorise-mand.component';
+import { ConfirmMandComponent } from './confirm-mand/confirm-mand.component';
+import { RejectMandateComponent } from './reject-mandate/reject-mandate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MandateComponent
+    MandateComponent,
+    AuthoriseMandComponent,
+    RoutingComponent,
+    ConfirmMandComponent,
+    RejectMandateComponent
   ],
   imports: [
     BrowserModule,

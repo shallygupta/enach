@@ -1,0 +1,108 @@
+
+    <div class="body">
+        <div class="Bank-logo">
+            LOGO
+        </div>
+        <div class="Bank-use">
+            Bank Use. This area can be used by the bank for their promotional message, other related information
+        </div>
+        <div class="desc-text">
+            <p class="text">
+                Welcome Mr/Ms/Mrs. (Customer Name)<br>
+                Please verify the details below to set up the mandate. In case of any discrepancy found you may cancel
+                the registration process
+            </p>
+        </div>
+        <div class="account-detail">
+            <table>
+                <tr>
+                    <th>Account Number</th>
+                    <td><input type="text" disabled class="account-input"  
+                      [(ngModel)]="customer.accountNo" name = "accountNo"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="mandate">
+            <div class="mandate-details">
+                <div class="mandate-text">
+                    <h3>Mandate details</h3>
+                </div>
+                <div class="mandate-form">
+                    <div class="mandate-form-grid">
+                        <label for="mandate-issued-to" class="inputLabel">Mandate issued to</label>
+                        <input id="mandate-issued-to" class="inputField" 
+                        [(ngModel)]="customer.corporateName" name = "corporateName" />
+
+                        <label for="start-date" class="inputLabel">Start date</label>
+                        <input id="start-date" class="inputField" 
+                        [(ngModel)]="customer.startDt" name = "startDt"/>
+
+                        <label for="end-date" class="inputLabel">End date</label>
+                        <input id="end-date" class="inputField"
+                        [(ngModel)]="customer.endDt" name = "endDt" />
+
+                        <label for="frequency" class="inputLabel">Frequency</label>
+                        <input id="frequency" class="inputField"
+                         [(ngModel)]="customer.frequency" name = "frequency" />
+                        
+                        <label for="amount-figures" class="inputLabel">Amount in figures</label>
+                        <input id="amount-figures" class="inputField" />
+                        
+                        <label for="amount-words" class="inputLabel">Amount in words</label>
+                        <input id="amount-words" class="inputField" />
+                        
+                        <label for="mandate-purpose" class="inputLabel">Purpose of mandate</label>
+                        <input id="mandate-purpose" class="inputField" />
+                    </div>
+                    
+                    <textarea 
+                        rows="6" 
+                        cols="50" 
+                        placeholder="Disclaimer/ Terms and conditions (bank)" 
+                        class="mandate-text-area" 
+                        disabled
+                    ></textarea>
+
+                    <div class="mandate-checkboxes">
+                        <div class="checkbox-grid">
+                            <input type="checkbox" id="checkbox1" value="checkbox1" class="checkbox-grid__input">
+                            <p class="checkbox-grid__text">
+                                This is to confirm that the declaration has
+                                been carefully read, understood & made by me/us. I am authorising the user entity/
+                                corporate to debit my account, based on the instructions as agreed and authorised by
+                                me
+                            </p>
+                        </div>
+                        <div class="checkbox-grid">
+                            <input type="checkbox" id="checkbox1" value="checkbox1" class="checkbox-grid__input">
+                            <p class="checkbox-grid__text">
+                                I have understood that I am authorised to cancel/amend this mandate by appropriately communicating
+                                the cancellation / amendment request to the user entity/ corporate or the bank where I have authorised the debi
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-bottom">
+                        <button class="btn gb-item1">Generate OTP</button>
+                        <label class="gb-item2">Enter OTP</label>
+                        <input type="text" class="gb-item3" />
+                        <div class="gb-item4"><button class="btn-underline">Resend OTP</button></div>
+                        <button class="btn gb-item5" (click)="approveMandate()">Approve Mandate</button>
+                        <button class="btn gb-item6" (click)="rejectMandate()" >Reject Mandate</button>
+                    </div>
+                    
+                    <p class="powered-by">E-Mandate powered by</p>
+                    <div class="brands">
+                        <div class="brands__image-wrapper">
+                            <img src="../assets/NACH-Logo.png" class="brands__image" />
+                        </div>
+                        <div class="brands__image-wrapper">
+                            <img src="../assets/NACH.jpg" class="brands__image" />
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>

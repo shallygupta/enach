@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 
 export class AuthoriseMandComponent implements OnInit {
   public customer: Customer;
+  tncAccepted: boolean=false;
+  tncAccepted2: boolean=false;
   constructor(private mandateApiService: MandateApiService,
     private router: Router) {
     this.customer = new Customer();
@@ -22,10 +24,27 @@ export class AuthoriseMandComponent implements OnInit {
     this.customer = this.mandateApiService.mandateCustomer;
   }
 
+  changeEvent2(event) {
+    if (event.target.checked) {
+        this.tncAccepted2= true;
+    }
+    else {
+        this.tncAccepted2= false;
+    }
+}
+ changeEvent(event) {
+        if (event.target.checked) {
+            this.tncAccepted= true;
+        }
+        else {
+            this.tncAccepted= false;
+        }
+    }
+
   approveMandate = function () {
-    this.mandateApiService.approveMandate().subscribe((data: any) => {
-      this.router.navigateByUrl('/confirm');
-    });
+    this.mandateApiService.approveMandate().subscribe();
+    this.router.navigateByUrl('/confirm');
+    
 
   };
   rejectMandate = function () {

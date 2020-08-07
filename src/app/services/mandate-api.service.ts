@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { LocationStrategy } from '@angular/common';
 
 @Injectable({
    providedIn: 'root'
 })
 export class MandateApiService {
 
-   private mandateApiurl = "https://7303a577-b291-4540-bc80-4e70d82a02dd.mock.pstmn.io/mandate";
-   private mandateActionUrl = "https://1c104c95-84a0-42bf-a580-2194fa626347.mock.pstmn.io/mandateAction";
+   private mandateApiurl = "http://localhost:8080/bank/1";
+   private mandateApproveUrl = "http://localhost:8080/bank/mandate/1/1";
+   private mandateRejectUrl = "http://localhost:8080/bank/mandate/1/0";
    public mandateCustomer;
 
-   constructor(private http: HttpClient) { }
+   constructor(private http: HttpClient, private location: LocationStrategy) {
+      history.pushState(null, null, window.location.href);  
+      this.location.onPopState(() => {
+        history.pushState(null, null, window.location.href);
+      });  
+    }
 
    getData() {
       return this.http.get(this.mandateApiurl);
@@ -22,7 +29,7 @@ export class MandateApiService {
       }
    }
    public approveMandate() {
-      return this.http.post(this.mandateActionUrl, this.approveMandateReqBody());
+      return this.http.post(this.mandateApproveUrl,"",{ responseType: 'text' });
 
    }
    public rejectMandateReqBody() {
@@ -31,7 +38,7 @@ export class MandateApiService {
       }
    }
    public rejectMandate() {
-      return this.http.post(this.mandateActionUrl, this.rejectMandateReqBody());
+      return this.http.post(this.mandateRejectUrl, "",{ responseType: 'text' });
    }
 }
 

@@ -65,7 +65,9 @@
 
                     <div class="mandate-checkboxes">
                         <div class="checkbox-grid">
-                            <input type="checkbox" id="checkbox1" value="checkbox1" class="checkbox-grid__input">
+                            <input type="checkbox" id="checkbox1" 
+                            (change)="changeEvent($event)" 
+                            value="checkbox1" class="checkbox-grid__input">
                             <p class="checkbox-grid__text">
                                 This is to confirm that the declaration has
                                 been carefully read, understood & made by me/us. I am authorising the user entity/
@@ -74,7 +76,7 @@
                             </p>
                         </div>
                         <div class="checkbox-grid">
-                            <input type="checkbox" id="checkbox1" value="checkbox1" class="checkbox-grid__input">
+                            <input type="checkbox" (change)="changeEvent2($event)"  id="checkbox1" value="checkbox1" class="checkbox-grid__input">
                             <p class="checkbox-grid__text">
                                 I have understood that I am authorised to cancel/amend this mandate by appropriately communicating
                                 the cancellation / amendment request to the user entity/ corporate or the bank where I have authorised the debi
@@ -87,7 +89,7 @@
                         <label class="gb-item2">Enter OTP</label>
                         <input type="text" class="gb-item3" />
                         <div class="gb-item4"><button class="btn-underline">Resend OTP</button></div>
-                        <button class="btn gb-item5" (click)="approveMandate()">Approve Mandate</button>
+                        <button class="btn gb-item5" [disabled]="!tncAccepted || !tncAccepted2"   (click)="approveMandate()">Approve Mandate</button>
                         <button class="btn gb-item6" (click)="rejectMandate()" >Reject Mandate</button>
                     </div>
                     

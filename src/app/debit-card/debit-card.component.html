@@ -1,0 +1,121 @@
+<div class="body">
+
+  <div class="Bank-logo">
+    Bank LOGO
+  </div>
+  <div class="flex-container">
+    <div class="flex">
+      <div class="text">
+        <div class="text-margin">
+          <p>Dear Customer,<br>
+            You are in the process of registration of E-Mandate. Please enter your card details to approve the mandate
+            registration if<br>
+            the below mentioned fields are correct</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="dec_text">Mandate Details</h3>
+      </div>
+      <form>
+
+        <table>
+          <tr>
+            <th>Account Number</th>
+            <td><input id="account_number" size="35" class="inputField" placeholder="Customer account number" 
+              [(ngModel)]="customer.accountNo" name = "accountNo"disabled>
+            </td>
+          </tr>
+          <tr>
+            <th>Mandate issued to</th>
+            <td><input [(ngModel)]="customer.corporateName" name = "corporateName" 
+             id="mandate_issue" 
+              size="35" class="inputField" placeholder="Corporate name" disabled></td>
+          </tr>
+          <tr>
+            <th>Start date</th>
+            <td><input  [(ngModel)]="customer.startDt" name = "startDt" type="text" id="start_date" size="35" class="inputField" placeholder="DD/MM/YYYY" disabled></td>
+          </tr>
+          <tr>
+            <th>End date</th>
+            <td><input type="text" id="end_date"  [(ngModel)]="customer.endDt" name = "endDt"
+              size="35" class="inputField" placeholder="DD/MM/YYYY" disabled></td>
+          </tr>
+          <tr>
+            <th>Frequency</th>
+            <td><input  id="frequency" [(ngModel)]="customer.frequency" name = "frequency" size="35" class="inputField" placeholder="Monthly/Quarterly/Half yearly" disabled>
+            </td>
+          </tr>
+          <tr>
+            <th>Amount in Figures</th>
+            <td><input   type="text" size="14.5" id="frequency1" placeholder="Rupee" disabled><input text="text" size="15"
+                id="frequency2" placeholder="Paisa" disabled></td>
+          </tr>
+          <tr>
+            <th>Amount in Words</th>
+            <td><input  [(ngModel)]="customer.amount" name = "amount" type="text" id="amount_in_words" size="35" class="inputField"
+                placeholder="To be populated by bank" disabled></td>
+          </tr>
+          <tr>
+            <th>Purpose of mandate</th>
+            <td><input type="text" id="purpose_of_mandate" size="35" class="inputField"
+                placeholder="As per NPCI cateogry" disabled></td>
+          </tr>
+          <tr>
+            <th>Card number</th>
+            <td><input type="text" size="5" id="card_number1"><input type="text" size="5" id="card_number2"><input
+                type="text" size="5" id="card_number3"><input type="text" size="5" id="card_number4"></td>
+          </tr>
+          <tr>
+            <th>Expiry date</th>
+            <td><select name='expireMM' id='expireMM'>
+                <option value=''>Month</option>
+                <option value='01'>January</option>
+                <option value='02'>February</option>
+                <option value='03'>March</option>
+                <option value='04'>April</option>
+                <option value='05'>May</option>
+                <option value='06'>June</option>
+                <option value='07'>July</option>
+                <option value='08'>August</option>
+                <option value='09'>September</option>
+                <option value='10'>October</option>
+                <option value='11'>November</option>
+                <option value='12'>December</option>
+              </select>
+              <select name='expireYY' id='expireYY'>
+                <option value=''>Year</option>
+                <option value='10'>2020</option>
+                <option value='11'>2021</option>
+                <option value='12'>2022</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>CVV</th>
+            <td><input id="cvv" size="15" class="inputField"></td>
+          </tr>
+        </table>
+
+        <div class="btn">
+          <button class="btn gb-item5" routerLink = "/proceed">Proceed</button>
+          <button class="btn gb-item6" routerLink = "/reject">Cancel</button>
+        </div>
+
+      </form>
+    </div>
+    <div class="flex-item">
+      <p>(Bank use) This area can be used by the bank for their promotional message, other related information</p>
+    </div>
+  </div>
+  <p class="powered-by">E-Mandate powered by</p>
+  <div class="brands">
+    <div class="brands__image-wrapper">
+      <img src="../../assets/images/NACH-Logo.png" class="brands__image" width="150px" height="80px" />
+    </div>
+    <div class="brands__image-wrapper">
+      <img src="../../assets/images/NACH.jpg" class="brands__image" width="140px" />
+    </div>
+  </div>
+
+</div>

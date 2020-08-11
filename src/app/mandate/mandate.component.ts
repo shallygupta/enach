@@ -22,9 +22,9 @@ export class MandateComponent implements OnInit {
       this.customer.frequency = data.MndtAuthReq.Mndt.Ocrncs.Frqcy;
       this.customer.purpose = data.MndtAuthReq.Mndt.Dbtr.AccNo;
       this.mandateApiService.mandateCustomer = this.customer;
-      console.log(data);
-      console.log(this.customer.accountNo);
-    });
+      localStorage.setItem('mandateCustomer', JSON.stringify(this.customer));
+    },
+    error => console.log('oops', error));
   }
 
 }

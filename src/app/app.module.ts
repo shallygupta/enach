@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthoriseMandComponent } from './authorise-mand/authorise-mand.component';
 import { ConfirmMandComponent } from './confirm-mand/confirm-mand.component';
 import { RejectMandateComponent } from './reject-mandate/reject-mandate.component';
+import { DebitCardComponent } from './debit-card/debit-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RejectMandateComponent } from './reject-mandate/reject-mandate.componen
     AuthoriseMandComponent,
     RoutingComponent,
     ConfirmMandComponent,
-    RejectMandateComponent
+    RejectMandateComponent,
+    DebitCardComponent
   ],
   imports: [
     BrowserModule,

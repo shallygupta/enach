@@ -1,4 +1,4 @@
-export class Customer{
+export class Customer {
     public accountNo: string;
     public corporateName: string;
     public startDt: Date;
@@ -7,6 +7,4 @@ export class Customer{
     public amount: string;
     public amountWords: string;
     public purpose: string;
-  
-   
 }

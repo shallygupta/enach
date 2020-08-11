@@ -11,46 +11,42 @@ import { Router } from '@angular/router';
 
 export class AuthoriseMandComponent implements OnInit {
   public customer: Customer;
-  tncAccepted: boolean=false;
-  tncAccepted2: boolean=false;
-  constructor(private mandateApiService: MandateApiService,
-    private router: Router) {
+  tncAccepted = false;
+  tncAccepted2 = false;
+  constructor(private mandateApiService: MandateApiService, private router: Router) {
     this.customer = new Customer();
-    this.customer = this.mandateApiService.mandateCustomer;
-
   }
 
   ngOnInit() {
-    this.customer = this.mandateApiService.mandateCustomer;
+    this.customer = JSON.parse(localStorage.getItem('mandateCustomer'));
   }
 
   changeEvent2(event) {
     if (event.target.checked) {
-        this.tncAccepted2= true;
-    }
-    else {
-        this.tncAccepted2= false;
+        this.tncAccepted2 = true;
+    } else {
+        this.tncAccepted2 = false;
     }
 }
  changeEvent(event) {
         if (event.target.checked) {
-            this.tncAccepted= true;
-        }
-        else {
-            this.tncAccepted= false;
+            this.tncAccepted = true;
+        } else {
+            this.tncAccepted = false;
         }
     }
 
-  approveMandate = function () {
-    this.mandateApiService.approveMandate().subscribe();
-    this.router.navigateByUrl('/confirm');
-    
-
+  approveMandate = function() {
+    this.mandateApiService.approveMandate().subscribe((data: any) => {
+      this.router.navigateByUrl('/confirm');
+    },
+    error => console.log('oops', error));
   };
-  rejectMandate = function () {
+  rejectMandate = function() {
     this.mandateApiService.rejectMandate().subscribe((data: any) => {
       this.router.navigateByUrl('/reject');
-    });
+    },
+    error => console.log('oops', error));
   };
 
 }

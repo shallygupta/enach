@@ -13,10 +13,9 @@ export class ConfirmMandComponent implements OnInit {
   public customer: Customer;
   constructor(private mandateApiService: MandateApiService) {
     this.customer = new Customer();
-    this.customer = this.mandateApiService.mandateCustomer;
   }
 
   ngOnInit() {
-    this.customer = this.mandateApiService.mandateCustomer;
+    this.customer = JSON.parse(localStorage.getItem('mandateCustomer'));
   }
 }
